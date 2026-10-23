@@ -91,7 +91,7 @@ The dates below reflect the Git history available in this repository. Phase 0 wa
 
 | Phase | Status / when | Implementation |
 | --- | --- | --- |
-| 0 — Backend foundation and Gemini integration | **IN-PROGRESS** | Set up the Spring Boot application, validated ask endpoint, Gemini configuration and HTTP client, service layer, response DTO, and global error handling. |
+| 0 — Backend foundation and Gemini integration | **COMPLETED** | Set up the Spring Boot application, validated ask endpoint, Gemini configuration and HTTP client, service layer, response DTO, and global error handling. |
 | 1 — Spring Core | Planned — after Phase 0 | Study and strengthen IoC, dependency injection, bean lifecycle, and component wiring. |
 | 2 — Spring Boot fundamentals and configuration | Planned — after Phase 1 | Add profiles, externalized configuration, and a clearer understanding of auto-configuration and startup. |
 | 3 — REST API design, validation, and exception handling | Planned — after Phase 2 | Standardize API contracts, validation errors, and REST error responses. |
