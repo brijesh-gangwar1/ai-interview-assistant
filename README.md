@@ -87,23 +87,23 @@ ai-interview-assistant/
 
 ## Implementation timeline
 
-The dates below reflect the Git history available in this repository. Phase 0 was implemented between the initial project work on **October 19, 2026** and the Phase 0 completion commit on **October 23, 2026**. Future phases are ordered below; target dates have not yet been assigned, so they are intentionally not estimated here.
+Phase 0 dates reflect the Git history available in this repository. Phase 1 was completed on **2026-11-25**. Future phases are ordered below; completion dates are left blank until those phases are finished.
 
-| Phase | Status / when | Implementation |
-| --- | --- | --- |
-| 0 — Backend foundation and Gemini integration | **COMPLETED** | Set up the Spring Boot application, validated ask endpoint, Gemini configuration and HTTP client, service layer, response DTO, and global error handling. |
-| 1 — Spring Core | Planned — after Phase 0 | Study and strengthen IoC, dependency injection, bean lifecycle, and component wiring. |
-| 2 — Spring Boot fundamentals and configuration | Planned — after Phase 1 | Add profiles, externalized configuration, and a clearer understanding of auto-configuration and startup. |
-| 3 — REST API design, validation, and exception handling | Planned — after Phase 2 | Standardize API contracts, validation errors, and REST error responses. |
-| 4 — Spring Data JPA and PostgreSQL persistence | Planned — after Phase 3 | Add persistent users, conversations, and messages using PostgreSQL and JPA. |
-| 5 — Advanced JPA and query optimization | Planned — after Phase 4 | Add history search/pagination and address fetch strategies and query performance. |
-| 6 — Transactions and data consistency | Planned — after Phase 5 | Define and test transaction boundaries and consistency behavior. |
-| 7 — Spring Security and JWT | Planned — after Phase 6 | Add registration, authentication, authorization, and user ownership checks. |
-| 8 — AOP and cross-cutting concerns | Planned — after Phase 7 | Apply AOP concepts to suitable cross-cutting behavior such as auditing or logging. |
-| 9 — Redis caching | Planned — after Phase 8 | Add cache-aside behavior for selected reusable answers, including expiry and invalidation. |
-| 10 — Async processing and scheduling | Planned — after Phase 9 | Introduce asynchronous work or scheduled tasks where they fit the application. |
-| 11 — Monitoring and observability | Planned — after Phase 10 | Expand health, metrics, and operational visibility for the application. |
-| 12 — Production readiness and resilience | Planned — after Phase 11 | Add appropriate timeouts, bounded retries, resilience, deployment configuration, and final operational checks. |
+| Phase | Status / when | Completion date | Implementation |
+| --- | --- | --- | --- |
+| 0 — Backend foundation and Gemini integration | **COMPLETED** | 2026-10-23 | Set up the Spring Boot application, validated ask endpoint, Gemini configuration and HTTP client, service layer, response DTO, and global error handling. |
+| 1 — Spring Core | **COMPLETED** | 2026-11-25 | Study and strengthen IoC, dependency injection, bean lifecycle, and component wiring. |
+| 2 — Spring Boot fundamentals and configuration | Planned — after Phase 1 |  | Add profiles, externalized configuration, and a clearer understanding of auto-configuration and startup. |
+| 3 — REST API design, validation, and exception handling | Planned — after Phase 2 |  | Standardize API contracts, validation errors, and REST error responses. |
+| 4 — Spring Data JPA and PostgreSQL persistence | Planned — after Phase 3 |  | Add persistent users, conversations, and messages using PostgreSQL and JPA. |
+| 5 — Advanced JPA and query optimization | Planned — after Phase 4 |  | Add history search/pagination and address fetch strategies and query performance. |
+| 6 — Transactions and data consistency | Planned — after Phase 5 |  | Define and test transaction boundaries and consistency behavior. |
+| 7 — Spring Security and JWT | Planned — after Phase 6 |  | Add registration, authentication, authorization, and user ownership checks. |
+| 8 — AOP and cross-cutting concerns | Planned — after Phase 7 |  | Apply AOP concepts to suitable cross-cutting behavior such as auditing or logging. |
+| 9 — Redis caching | Planned — after Phase 8 |  | Add cache-aside behavior for selected reusable answers, including expiry and invalidation. |
+| 10 — Async processing and scheduling | Planned — after Phase 9 |  | Introduce asynchronous work or scheduled tasks where they fit the application. |
+| 11 — Monitoring and observability | Planned — after Phase 10 |  | Expand health, metrics, and operational visibility for the application. |
+| 12 — Production readiness and resilience | Planned — after Phase 11 |  | Add appropriate timeouts, bounded retries, resilience, deployment configuration, and final operational checks. |
 
 Each phase should leave the application runnable and include relevant tests before the next phase begins. See [README_Spring_Boot_Backend_Roadmap.md](README_Spring_Boot_Backend_Roadmap.md) for the detailed learning objectives and phase checklist.
 
