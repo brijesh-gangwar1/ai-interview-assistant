@@ -28,7 +28,7 @@ Example response:
 }
 ```
 
-Blank questions are rejected by request validation. The Gemini API key, model, and connection/read timeouts are configured through the `app.gemini` properties in `application.properties`; provide your own API key through configuration and do not commit secrets.
+Blank questions are rejected by request validation. The Gemini API key, model, and connection/read timeouts are configured through the `app.gemini` properties in `application.yml`; provide your own API key through configuration and do not commit secrets.
 
 ## Technology
 
@@ -67,7 +67,7 @@ ai-interview-assistant/
 │   │   │   └── service/
 │   │   │       └── GeminiService.java                # Coordinates the Gemini client and API response.
 │   │   ├── resources/
-│   │   │   └── application.properties                # Spring application and integration configuration.
+│   │   │   └── application.yml                # Spring application and integration configuration.
 │   │   └── test/
 │   │       └── java/com/gangwar/ai_interview_assistant/
 │   │           └── AiInterviewAssistantApplicationTests.java # Checks that the Spring application context loads.
@@ -110,20 +110,56 @@ Each phase should leave the application runnable and include relevant tests befo
 ## Running locally
 
 1. Install JDK 25.
-2. Configure a valid Gemini API key and the required application settings.
-3. From the repository root, start the application with the Maven Wrapper:
+2. Start with the local profile:
 
    ```powershell
-   .\mvnw.cmd spring-boot:run
+   .\mvnw.cmd spring-boot:run "-Dspring-boot.run.profiles=local"
    ```
 
-4. Send a `POST` request to `http://localhost:8080/api/v1/ai/ask` with a JSON body containing a non-blank `question`.
+The local profile uses Gemini and database environment variables.
 
-Run the test suite with:
+Send a `POST` request to `http://localhost:8080/api/v1/ai/ask` with a JSON body containing a non-blank `question`.
 
-```powershell
-.\mvnw.cmd test
-```
+For local execution, configure these values in the IDE run configuration environment settings:
+
+| Variable | Purpose |
+| --- | --- |
+| `GEMINI_API_KEY` | Gemini API key |
+| `GEMINI_MODEL` | Optional Gemini model override |
+| `GEMINI_CONNECT_TIMEOUT` | Optional connection timeout |
+| `GEMINI_READ_TIMEOUT` | Optional read timeout |
+| `DB_URL` | PostgreSQL JDBC URL |
+| `DB_USERNAME` | PostgreSQL username |
+| `DB_PASSWORD` | PostgreSQL password |
+
+Do not set these secrets in PowerShell or add them to YAML files.
+
+## Render development deployment
+
+Deploy the same backend to Render with the `dev` Spring profile. Do not place secrets in `application-dev.yml`, the chat, or shell commands.
+
+Create a Render Web Service from this repository and configure:
+
+| Setting | Value |
+| --- | --- |
+| Runtime | Java |
+| Build command | `./mvnw -DskipTests package` |
+| Start command | `java -jar target/ai-interview-assistant-0.0.1-SNAPSHOT.jar --spring.profiles.active=dev` |
+| `SPRING_PROFILES_ACTIVE` | `dev` |
+
+Add these values in the Render dashboard under Environment Variables:
+
+| Variable | Purpose |
+| --- | --- |
+| `GEMINI_API_KEY` | Gemini API key |
+| `GEMINI_MODEL` | Optional Gemini model override |
+| `GEMINI_CONNECT_TIMEOUT` | Optional connection timeout |
+| `GEMINI_READ_TIMEOUT` | Optional read timeout |
+| `DB_URL` | PostgreSQL JDBC URL |
+| `DB_USERNAME` | PostgreSQL username |
+| `DB_PASSWORD` | PostgreSQL password |
+
+Render supplies environment-variable values to the process; no secret values are committed by this project.
 
 ## API documentation
 

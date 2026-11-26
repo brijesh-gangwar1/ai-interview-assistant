@@ -2,6 +2,7 @@ package com.gangwar.ai_interview_assistant.client;
 
 import com.gangwar.ai_interview_assistant.config.GeminiProperties;
 import io.netty.channel.ChannelOption;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.client.reactive.ReactorClientHttpConnector;
@@ -9,6 +10,11 @@ import org.springframework.web.reactive.function.client.WebClient;
 import reactor.netty.http.client.HttpClient;
 
 @Configuration
+@ConditionalOnProperty(
+        name = "app.ai.provider",
+        havingValue = "gemini",
+        matchIfMissing = true
+)
 public class WebClientConfig {
 
     @Bean

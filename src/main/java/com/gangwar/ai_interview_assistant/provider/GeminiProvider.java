@@ -1,11 +1,15 @@
 package com.gangwar.ai_interview_assistant.provider;
 
 import com.gangwar.ai_interview_assistant.client.GeminiClient;
-import org.springframework.context.annotation.Primary;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 
 @Component("geminiProvider")
-@Primary
+@ConditionalOnProperty(
+        name = "app.ai.provider",
+        havingValue = "gemini",
+        matchIfMissing = true
+)
 public class GeminiProvider implements AiProvider {
 
     private final GeminiClient geminiClient;

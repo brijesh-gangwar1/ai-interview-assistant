@@ -6,7 +6,6 @@ import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -16,8 +15,7 @@ public class GeminiService {
 
     private final AiProvider aiProvider;
 
-    public GeminiService(
-            @Qualifier("geminiProvider") AiProvider aiProvider) {
+    public GeminiService(AiProvider aiProvider) {
         this.aiProvider = aiProvider;
     }
 

@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+app:
+  ai:
+    provider: gemini
+  gemini:
+    api-key: ${GEMINI_API_KEY}
+    model: ${GEMINI_MODEL:gemini-3.1-flash-lite}
+    connect-timeout: ${GEMINI_CONNECT_TIMEOUT:5s}
+    read-timeout: ${GEMINI_READ_TIMEOUT:90s}
+
+management:
+  endpoints:
+    web:
+      base-path: /actuator
+      exposure:
+        include: info  # health,metrics

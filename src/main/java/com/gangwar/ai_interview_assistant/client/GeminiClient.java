@@ -4,14 +4,18 @@ package com.gangwar.ai_interview_assistant.client;
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.json.JsonMapper;
 import com.gangwar.ai_interview_assistant.config.GeminiProperties;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.time.Duration;
-
 @Component
+@ConditionalOnProperty(
+        name = "app.ai.provider",
+        havingValue = "gemini",
+        matchIfMissing = true
+)
 public class GeminiClient {
 
     private final WebClient webClient;

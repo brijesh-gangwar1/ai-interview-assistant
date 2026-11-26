@@ -1,0 +1,9 @@
+
+spring:
+  application:
+    name: ai-interview-assistant
+  profiles:
+    active: ${ACTIVE_PROFILE:dev}  # dev , local
+
+server:
+  port: ${PORT:8080}
