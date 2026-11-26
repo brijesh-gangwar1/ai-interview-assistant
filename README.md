@@ -87,13 +87,13 @@ ai-interview-assistant/
 
 ## Implementation timeline
 
-Phase 0 dates reflect the Git history available in this repository. Phase 1 was completed on **2026-11-25**. Future phases are ordered below; completion dates are left blank until those phases are finished.
+Phase 0 dates reflect the Git history available in this repository. Future phases are ordered below; completion dates are left blank until those phases are finished.
 
 | Phase | Status / when | Completion date | Implementation |
 | --- | --- | --- | --- |
 | 0 — Backend foundation and Gemini integration | **COMPLETED** | 2026-10-23 | Set up the Spring Boot application, validated ask endpoint, Gemini configuration and HTTP client, service layer, response DTO, and global error handling. |
 | 1 — Spring Core | **COMPLETED** | 2026-11-25 | Study and strengthen IoC, dependency injection, bean lifecycle, and component wiring. |
-| 2 — Spring Boot fundamentals and configuration | Planned — after Phase 1 |  | Add profiles, externalized configuration, and a clearer understanding of auto-configuration and startup. |
+| 2 — Spring Boot fundamentals and configuration | **COMPLETED** | 2026-11-26 | Add local/dev profiles, environment-based provider and secret configuration, validated Gemini properties, and Render deployment setup. Typed database configuration is deferred to a later phase. |
 | 3 — REST API design, validation, and exception handling | Planned — after Phase 2 |  | Standardize API contracts, validation errors, and REST error responses. |
 | 4 — Spring Data JPA and PostgreSQL persistence | Planned — after Phase 3 |  | Add persistent users, conversations, and messages using PostgreSQL and JPA. |
 | 5 — Advanced JPA and query optimization | Planned — after Phase 4 |  | Add history search/pagination and address fetch strategies and query performance. |
