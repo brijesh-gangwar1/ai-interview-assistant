@@ -125,6 +125,7 @@ For local execution, configure these values in the IDE run configuration environ
 | Variable | Purpose |
 | --- | --- |
 | `GEMINI_API_KEY` | Gemini API key |
+| `AI_PROVIDER` | Optional provider override: `mock` or `gemini` (defaults to `mock` for local) |
 | `GEMINI_MODEL` | Optional Gemini model override |
 | `GEMINI_CONNECT_TIMEOUT` | Optional connection timeout |
 | `GEMINI_READ_TIMEOUT` | Optional read timeout |
@@ -152,6 +153,7 @@ Add these values in the Render dashboard under Environment Variables:
 | Variable | Purpose |
 | --- | --- |
 | `GEMINI_API_KEY` | Gemini API key |
+| `AI_PROVIDER` | Optional provider override: `mock` or `gemini` (defaults to `gemini` for dev) |
 | `GEMINI_MODEL` | Optional Gemini model override |
 | `GEMINI_CONNECT_TIMEOUT` | Optional connection timeout |
 | `GEMINI_READ_TIMEOUT` | Optional read timeout |
